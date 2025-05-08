@@ -42,6 +42,13 @@
             filter: grayscale(0%); /* Warna penuh saat hover */
             transform: scale(1.1);
         }
+        .line-clamp-custom {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 3; /* Standard property for compatibility */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
         /* Removed empty .skill-logo ruleset to avoid errors */
     </style>
 </head>
@@ -242,25 +249,25 @@
             <h2 class="text-3xl font-bold text-center mb-12 section-title">Proyek Saya</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-gray-50 p-6 rounded-lg shadow-lg project-card">
-                    <img src="https://placehold.co/600x400/CBD5E0/4A5568?text=Proyek+1" alt="[Gambar Proyek 1]" class="rounded-md mb-4 w-full h-48 object-cover">
-                    <h3 class="text-xl font-semibold mb-2 text-blue-700">Deploy Aplikasi Web Statis ke AWS S3 & CloudFront</h3>
-                    <p class="text-gray-600 text-sm mb-3">Teknologi: AWS S3, CloudFront, Route 53 (opsional), HTML, CSS</p>
-                    <p class="text-gray-700 mb-4">
-                        Mendeploy sebuah website statis sederhana ke AWS S3, mengkonfigurasi CloudFront untuk distribusi konten global dan HTTPS.
+                    <img src="/assets/diagram messaging app.png" alt="Arsitektur Simple Messaging App" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-700">Simple Messaging App</h3>
+                    <p class="text-gray-600 text-sm mb-3">Teknologi: Go, MySQL, MongoDB, AWS, GitHub Action, ELK Stack</p>
+                    <p class="text-gray-700 mb-4 line-clamp-custom">
+                        Mengembangkan aplikasi messaging real-time ringan dengan fokus pada backend dan infrastruktur. Dibangun menggunakan Go (Golang) dengan framework Fiber untuk menangani otentikasi pengguna (via MySQL) dan pertukaran pesan real-time (via WebSockets, disimpan di MongoDB). Aplikasi dideploy di AWS (EC2, RDS) dengan pipeline CI/CD menggunakan GitHub Actions serta implementasi monitoring dan logging terpusat via ELK Stack.
                     </p>
-                    <a href="https://github.com/usernameanda/proyek-1" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-semibold">
+                    <a href="https://github.com/glng-swndru/messaging-app" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-semibold">
                         Lihat di GitHub <i class="fab fa-github ml-1"></i>
                     </a>
                 </div>
 
                 <div class="bg-gray-50 p-6 rounded-lg shadow-lg project-card">
-                    <img src="https://placehold.co/600x400/A0AEC0/4A5568?text=Proyek+2" alt="[Gambar Proyek 2]" class="rounded-md mb-4 w-full h-48 object-cover">
-                    <h3 class="text-xl font-semibold mb-2 text-blue-700">Pipeline CI/CD Dasar dengan GitHub Actions</h3>
-                    <p class="text-gray-600 text-sm mb-3">Teknologi: GitHub Actions, Docker (opsional), Python (untuk aplikasi contoh)</p>
-                    <p class="text-gray-700 mb-4">
-                        Membuat pipeline CI/CD sederhana menggunakan GitHub Actions untuk otomatisasi build dan test (jika ada) aplikasi kecil setiap kali ada push ke repositori.
+                    <img src="/assets/66a2524e228b655073c3e63e_spotify latenode.png" alt="Spotify API" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-700">Music Catalog App</h3>
+                    <p class="text-gray-600 text-sm mb-3">Teknologi: Go, Go Fiber, PostgreSQL, Spotify API, Docker</p>
+                    <p class="text-gray-700 mb-4 text-gray-700 mb-4 line-clamp-custom">
+                        Aplikasi web berbasis Go yang memungkinkan pengguna mengelola preferensi musik dan aktivitas mereka, dengan integrasi mendalam ke Spotify API. Fitur utama meliputi manajemen pengguna (registrasi, login), pencatatan aktivitas suka/tidak suka pada lagu, pencarian lagu via Spotify API, dan rekomendasi lagu personal. Data pengguna dan aktivitas disimpan secara persisten menggunakan PostgreSQL, dengan backend yang diekspos melalui RESTful API. PostgreSQL dijalankan menggunakan Docker untuk kemudahan setup.
                     </p>
-                    <a href="https://github.com/usernameanda/proyek-2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-semibold">
+                    <a href="https://github.com/glng-swndru/music-catalog" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-semibold">
                         Lihat di GitHub <i class="fab fa-github ml-1"></i>
                     </a>
                 </div>
@@ -269,7 +276,7 @@
                     <img src="https://placehold.co/600x400/718096/E2E8F0?text=Proyek+3" alt="[Gambar Proyek 3]" class="rounded-md mb-4 w-full h-48 object-cover">
                     <h3 class="text-xl font-semibold mb-2 text-blue-700">Infrastruktur sebagai Kode dengan Terraform</h3>
                     <p class="text-gray-600 text-sm mb-3">Teknologi: Terraform, AWS (VPC, EC2, Security Group)</p>
-                    <p class="text-gray-700 mb-4">
+                    <p class="text-gray-700 mb-4 text-gray-700 mb-4 line-clamp-custom">
                         Mendefinisikan dan menerapkan infrastruktur jaringan dasar (VPC, subnet) dan sebuah instance EC2 di AWS menggunakan Terraform.
                     </p>
                     <a href="https://github.com/usernameanda/proyek-3" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-semibold">
