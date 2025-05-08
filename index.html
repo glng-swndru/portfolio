@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Saya - Cloud & DevOps Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Gaya kustom tambahan jika diperlukan */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth; /* Untuk smooth scrolling saat klik navigasi */
+        }
+        .hero-bg {
+            background-color: #1a202c; /* Warna latar belakang gelap untuk hero */
+            background-image: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+        }
+        .section-title {
+            border-bottom: 3px solid #4a5568; /* Garis bawah untuk judul bagian */
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        .project-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Gaya untuk tombol navigasi mobile */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+        .skill-logo-container {
+            filter: grayscale(50%); /* Membuat logo sedikit abu-abu */
+            transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .skill-logo-container:hover {
+            filter: grayscale(0%); /* Warna penuh saat hover */
+            transform: scale(1.1);
+        }
+        /* Removed empty .skill-logo ruleset to avoid errors */
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-700 hover:text-blue-600">Gilang S</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#hero" class="text-gray-600 hover:text-blue-600">Beranda</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600">Tentang Saya</a>
+                <a href="#skills" class="text-gray-600 hover:text-blue-600">Keahlian</a>
+                <a href="#projects" class="text-gray-600 hover:text-blue-600">Proyek</a>
+                <a href="#education" class="text-gray-600 hover:text-blue-600">Pendidikan</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600">Kontak</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg absolute w-full">
+            <a href="#hero" class="block px-6 py-3 text-gray-600 hover:bg-blue-500 hover:text-white">Beranda</a>
+            <a href="#about" class="block px-6 py-3 text-gray-600 hover:bg-blue-500 hover:text-white">Tentang Saya</a>
+            <a href="#skills" class="block px-6 py-3 text-gray-600 hover:bg-blue-500 hover:text-white">Keahlian</a>
+            <a href="#projects" class="block px-6 py-3 text-gray-600 hover:bg-blue-500 hover:text-white">Proyek</a>
+            <a href="#education" class="block px-6 py-3 text-gray-600 hover:bg-blue-500 hover:text-white">Pendidikan</a>
+            <a href="#contact" class="block px-6 py-3 text-gray-600 hover:bg-blue-500 hover:text-white">Kontak</a>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <img src="/profile.jpg" alt="Foto Profil Anda" class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full mb-6 border-4 border-blue-400 object-cover">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Halo, Saya Gilang Swandaru</h1>
+            <p class="text-xl md:text-2xl mb-8 text-blue-300">Aspiring Cloud & DevOps Engineer</p>
+            <p class="text-lg max-w-2xl mx-auto mb-10">
+                Saya adalah seorang IT enthusiast dengan fokus pada cloud computing dan praktik DevOps. Dengan semangat untuk terus belajar, saya siap berkontribusi dalam membangun infrastruktur yang efisien dan siap skalasi, guna mendukung kebutuhan bisnis yang terus berkembang.
+            </p>
+            <div class="space-x-4">
+                <a href="#projects" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300">Lihat Proyek Saya</a>
+                <a href="#contact" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300">Hubungi Saya</a>
+            </div>
+            <div class="mt-12 flex justify-center space-x-6">
+                <a href="https://linkedin.com/in/gilang-swandaru" target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-white transition duration-300">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://github.com/glng-swndru" target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-white transition duration-300">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Tentang Saya</h2>
+            <div class="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed">
+                <p class="mb-4">
+                    Sejak mulai mendalami dunia cloud computing dan DevOps, saya semakin tertarik pada bagaimana otomatisasi, infrastruktur sebagai kode, dan kolaborasi tim dapat meningkatkan efisiensi serta keandalan sistem TI. Ketertarikan ini mendorong saya untuk terus belajar dan mengembangkan keterampilan teknis, mulai dari pengelolaan infrastruktur di AWS, penggunaan Terraform, hingga membangun aplikasi sederhana dengan Golang.
+                </p>
+                <p class="mb-4">
+                    Saya percaya bahwa inovasi teknologi lahir dari pembelajaran yang berkelanjutan dan kerja sama yang solid. Tujuan saya adalah menjadi seorang DevOps Engineer yang tidak hanya menguasai teknologi cloud modern, tetapi juga mampu memberikan dampak nyata bagi organisasi melalui praktik terbaik DevOps.
+                </p>
+                <p>
+                    Saat tidak berkutat dengan terminal atau cloud console, saya menikmati waktu dengan membaca buku, berolahraga di gym, atau berjalan santai untuk menyegarkan pikiran.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-16 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12 section-title">Keahlian Teknis</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 md:gap-8 justify-items-center">
+            
+            <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+            <p class="text-sm font-medium text-gray-700 text-center">AWS</p>
+            </div>
+            
+            <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+            <p class="text-sm font-medium text-gray-700 text-center">Google Cloud</p>
+            </div>
+
+            <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+            <p class="text-sm font-medium text-gray-700 text-center">Docker</p>
+            </div>
+
+            <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+            <p class="text-sm font-medium text-gray-700 text-center">Kubernetes</p>
+            </div>
+
+            <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+            <p class="text-sm font-medium text-gray-700 text-center">Terraform</p>
+            </div>
+
+            <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" alt="Ansible Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+            <p class="text-sm font-medium text-gray-700 text-center">Ansible</p>
+            </div>
+
+            <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+            <p class="text-sm font-medium text-gray-700 text-center">Jenkins</p>
+            </div>
+
+            <!-- GitHub Actions tidak tersedia di Devicon -->
+            <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/githubactions.svg" alt="GitHub Actions Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+            <p class="text-sm font-medium text-gray-700 text-center">GitHub Actions</p>
+            </div>
+
+            <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+            <p class="text-sm font-medium text-gray-700 text-center">Git</p>
+            </div>
+
+            <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg" alt="GraphQL Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+                <p class="text-sm font-medium text-gray-700 text-center">GraphQL</p>
+            </div>
+
+            <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Golang Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+            <p class="text-sm font-medium text-gray-700 text-center">Golang</p>
+            </div>
+
+            <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+            <p class="text-sm font-medium text-gray-700 text-center">Linux</p>
+            </div>
+
+            <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" alt="Prometheus Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+            <p class="text-sm font-medium text-gray-700 text-center">Prometheus</p>
+            </div>
+
+            <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+            <p class="text-sm font-medium text-gray-700 text-center">Grafana</p>
+            </div>
+
+            <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg" alt="Elastic Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+                <p class="text-sm font-medium text-gray-700 text-center">Elasticsearch</p>
+            </div>
+
+            <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/logstash/logstash-original.svg" alt="Logstash Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+                <p class="text-sm font-medium text-gray-700 text-center">Logstash</p>
+            </div>
+
+            <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kibana/kibana-original.svg" alt="Kibana Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+                <p class="text-sm font-medium text-gray-700 text-center">Kibana</p>
+            </div>
+
+            <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+                <p class="text-sm font-medium text-gray-700 text-center">Bash Script</p>
+            </div>
+        </div>
+        <p class="text-center text-gray-600 mt-10">Dan teknologi pendukung lainnya dalam ekosistem Cloud & DevOps.</p>
+        </div>
+    </section>
+
+
+    <section id="projects" class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Proyek Saya</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg project-card">
+                    <img src="https://placehold.co/600x400/CBD5E0/4A5568?text=Proyek+1" alt="[Gambar Proyek 1]" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-700">Deploy Aplikasi Web Statis ke AWS S3 & CloudFront</h3>
+                    <p class="text-gray-600 text-sm mb-3">Teknologi: AWS S3, CloudFront, Route 53 (opsional), HTML, CSS</p>
+                    <p class="text-gray-700 mb-4">
+                        Mendeploy sebuah website statis sederhana ke AWS S3, mengkonfigurasi CloudFront untuk distribusi konten global dan HTTPS.
+                    </p>
+                    <a href="https://github.com/usernameanda/proyek-1" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-semibold">
+                        Lihat di GitHub <i class="fab fa-github ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg project-card">
+                    <img src="https://placehold.co/600x400/A0AEC0/4A5568?text=Proyek+2" alt="[Gambar Proyek 2]" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-700">Pipeline CI/CD Dasar dengan GitHub Actions</h3>
+                    <p class="text-gray-600 text-sm mb-3">Teknologi: GitHub Actions, Docker (opsional), Python (untuk aplikasi contoh)</p>
+                    <p class="text-gray-700 mb-4">
+                        Membuat pipeline CI/CD sederhana menggunakan GitHub Actions untuk otomatisasi build dan test (jika ada) aplikasi kecil setiap kali ada push ke repositori.
+                    </p>
+                    <a href="https://github.com/usernameanda/proyek-2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-semibold">
+                        Lihat di GitHub <i class="fab fa-github ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg project-card">
+                    <img src="https://placehold.co/600x400/718096/E2E8F0?text=Proyek+3" alt="[Gambar Proyek 3]" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-700">Infrastruktur sebagai Kode dengan Terraform</h3>
+                    <p class="text-gray-600 text-sm mb-3">Teknologi: Terraform, AWS (VPC, EC2, Security Group)</p>
+                    <p class="text-gray-700 mb-4">
+                        Mendefinisikan dan menerapkan infrastruktur jaringan dasar (VPC, subnet) dan sebuah instance EC2 di AWS menggunakan Terraform.
+                    </p>
+                    <a href="https://github.com/usernameanda/proyek-3" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-semibold">
+                        Lihat di GitHub <i class="fab fa-github ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-16 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Pendidikan & Sertifikasi</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Pendidikan Formal</h3>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-xl font-semibold text-blue-700">Institut Teknologi Sapta Mandiri</h4>
+                        <p class="text-gray-600">Sarjana - Teknologi Informasi</p>
+                        <p class="text-sm text-gray-500">Tahun Lulus: 2024</p>
+                        <p class="mt-2 text-gray-700">Proyek Akhir/Skripsi: <i>Penggunaan Alat Pelindung Diri pada Pekerja Berbasis Web Browser Menggunakan YOLOv8 dan TensorFlow.js</i></p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Sertifikasi & Kursus Online</h3>
+                    <div class="bg-white p-6 rounded-lg shadow-md space-y-3">
+                        <div>
+                            <h4 class="text-lg font-semibold text-blue-700">AWS Certified Cloud Practitioner</h4>
+                            <p class="text-sm text-gray-500">Diperoleh: Februari 2025</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-blue-700">Certified Network Security Practitioner (CNSP)</h4>
+                            <p class="text-sm text-gray-500">Diperoleh: Agustus 2024</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-blue-700">Google Cloud Digital Leader</h4>
+                            <p class="text-sm text-gray-500">Diperoleh: Februari 2024</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-blue-700">Google Associate Cloud Engineer</h4>
+                            <p class="text-sm text-gray-500">Diperoleh: November 2023</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-blue-700">AWS re/Start Program Batch 9</h4>
+                            <p class="text-sm text-gray-500">Platform: Orbit Future Academy​</p>
+                            <p class="text-sm text-gray-500">Periode: Juni - September 2024</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-blue-700">Cloud Computing Cohort</h4>
+                            <p class="text-sm text-gray-500">Platform: Bangkit Academy​ ​</p>
+                            <p class="text-sm text-gray-500">Periode: Februari - Juli 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Hubungi Saya</h2>
+            <div class="max-w-xl mx-auto text-center">
+                <p class="text-lg text-gray-700 mb-8">
+                    Saya sangat antusias untuk membahas peluang, proyek, atau sekadar bertukar pikiran mengenai teknologi cloud dan DevOps. Jangan ragu untuk menghubungi saya!
+                </p>
+                <a href="mailto:emailanda@gilangswandaru27.com" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 mb-6">
+                    Kirim Email <i class="fas fa-paper-plane ml-2"></i>
+                </a>
+                <div class="flex justify-center space-x-6 mt-6">
+                    <a href="https://linkedin.com/in/gilang-swandaru" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 transition duration-300">
+                        <i class="fab fa-linkedin fa-3x"></i>
+                        <span class="block text-sm mt-1">LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/glng-swndru" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-black transition duration-300">
+                        <i class="fab fa-github fa-3x"></i>
+                        <span class="block text-sm mt-1">GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-300 py-8 text-center">
+        <div class="container mx-auto px-6">
+            <p>&copy; <span id="currentYear"></span> Gilang Swandaru. Dibuat dengan <i class="fas fa-heart text-red-500"></i> dan Tailwind CSS.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script untuk toggle menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Script untuk menutup menu mobile saat link di klik (opsional)
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Script untuk menampilkan tahun saat ini di footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Script untuk mewarnai SVG dari Simple Icons (jika SVG mendukung 'currentColor')
+        // Beberapa SVG mungkin tidak bisa diwarnai ulang dengan cara ini.
+        // Anda mungkin perlu mengunduh SVG dan memodifikasinya atau menggunakan filter CSS.
+        document.querySelectorAll('.skill-logo').forEach(img => {
+            const color = img.style.fill; // Ambil warna dari style inline jika ada
+            if (color && img.src.endsWith('.svg')) {
+                // Coba fetch dan modifikasi SVG, ini lebih kompleks dan mungkin terhalang CORS
+                // Pendekatan yang lebih sederhana adalah menggunakan filter CSS atau memastikan SVG sumber menggunakan currentColor
+            }
+        });
+    </script>
+
+</body>
+</html>
