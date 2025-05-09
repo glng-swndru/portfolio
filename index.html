@@ -9,10 +9,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         /* Gaya kustom tambahan jika diperlukan */
         body {
             font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth; /* Untuk smooth scrolling saat klik navigasi */
         }
         .hero-bg {
             background-color: #1a202c; /* Warna latar belakang gelap untuk hero */
@@ -23,7 +26,7 @@
             padding-bottom: 0.5rem;
             display: inline-block;
         }
-        .project-card {
+        .project-card .article-card {
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         .project-card:hover {
@@ -49,7 +52,13 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-        /* Removed empty .skill-logo ruleset to avoid errors */
+        .article-line-clamp { /* Kelas baru untuk deskripsi artikel jika perlu baris berbeda */
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Contoh: 2 baris untuk deskripsi artikel */
+            line-clamp: 2; /* Standard property for compatibility */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -83,6 +92,7 @@
                 <a href="#skills" class="text-gray-600 hover:text-blue-600">Keahlian</a>
                 <a href="#projects" class="text-gray-600 hover:text-blue-600">Proyek</a>
                 <a href="#education" class="text-gray-600 hover:text-blue-600">Pendidikan</a>
+                <a href="#articles" class="text-gray-600 hover:text-blue-600">Artikel</a>
                 <a href="#contact" class="text-gray-600 hover:text-blue-600">Kontak</a>
             </div>
             <div class="md:hidden">
@@ -99,6 +109,7 @@
             <a href="#skills" class="block px-6 py-3 text-gray-600 hover:bg-blue-500 hover:text-white">Keahlian</a>
             <a href="#projects" class="block px-6 py-3 text-gray-600 hover:bg-blue-500 hover:text-white">Proyek</a>
             <a href="#education" class="block px-6 py-3 text-gray-600 hover:bg-blue-500 hover:text-white">Pendidikan</a>
+            <a href="#articles" class="block px-6 py-3 text-gray-600 hover:bg-blue-500 hover:text-white">Artikel</a>
             <a href="#contact" class="block px-6 py-3 text-gray-600 hover:bg-blue-500 hover:text-white">Kontak</a>
         </div>
     </header>
@@ -109,20 +120,20 @@
             <h1 class="text-4xl md:text-5xl font-bold mb-4">Halo, Saya Gilang Swandaru</h1>
             <p class="text-xl md:text-2xl mb-8 text-blue-300">Aspiring Cloud & DevOps Engineer</p>
             <p class="text-lg max-w-2xl mx-auto mb-10">
-                Saya adalah seorang IT enthusiast dengan fokus pada cloud computing dan praktik DevOps. Dengan semangat untuk terus belajar, saya siap berkontribusi dalam membangun infrastruktur yang efisien dan siap skalasi, guna mendukung kebutuhan bisnis yang terus berkembang.
+                Sebagai seorang enthusiast di bidang cloud computing dan DevOps, saya berfokus pada pembangunan infrastruktur yang efisien dan siap skalasi. Dengan semangat untuk terus belajar dan berkembang, saya siap berkontribusi dalam menciptakan solusi yang mendukung kebutuhan bisnis yang terus berubah.
             </p>
             <div class="flex flex-col items-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 sm:justify-center">
                 <a href="#projects" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300">Lihat Proyek Saya</a>
                 <a href="#contact" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300">Hubungi Saya</a>
             </div>
-            <div class="mt-12 flex justify-center space-x-6">
+            <!-- <div class="mt-12 flex justify-center space-x-6">
                 <a href="https://linkedin.com/in/gilang-swandaru" target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-white transition duration-300">
                     <i class="fab fa-linkedin fa-2x"></i>
                 </a>
                 <a href="https://github.com/glng-swndru" target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-white transition duration-300">
                     <i class="fab fa-github fa-2x"></i>
                 </a>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -131,17 +142,18 @@
             <h2 class="text-3xl font-bold text-center mb-12 section-title">Tentang Saya</h2>
             <div class="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed">
                 <p class="mb-4">
-                    Sejak mulai mendalami dunia cloud computing dan DevOps, saya semakin tertarik pada bagaimana otomatisasi, infrastruktur sebagai kode, dan kolaborasi tim dapat meningkatkan efisiensi serta keandalan sistem TI. Ketertarikan ini mendorong saya untuk terus belajar dan mengembangkan keterampilan teknis, mulai dari pengelolaan infrastruktur di AWS, penggunaan Terraform, hingga membangun aplikasi sederhana dengan Golang.
+                    Saya merupakan lulusan <strong>Teknologi Informasi</strong> yang saat ini sedang fokus membangun karier di bidang <strong>Cloud Computing</strong> dan <strong>DevOps Engineering</strong>. Meskipun pengalaman kerja saya sebelumnya berada di luar bidang IT, saya aktif mengembangkan kompetensi teknis melalui <em>pembelajaran mandiri</em> dan proyek-proyek pribadi.
                 </p>
                 <p class="mb-4">
-                    Saya percaya bahwa inovasi teknologi lahir dari pembelajaran yang berkelanjutan dan kerja sama yang solid. Tujuan saya adalah menjadi seorang DevOps Engineer yang tidak hanya menguasai teknologi cloud modern, tetapi juga mampu memberikan dampak nyata bagi organisasi melalui praktik terbaik DevOps.
+                    Saat ini saya mendalami layanan <strong>AWS</strong>, praktik <strong>Infrastructure as Code</strong> menggunakan <strong>Terraform</strong>, serta membangun aplikasi sederhana dengan <strong>Golang</strong>. Saya percaya bahwa teknologi yang efektif lahir dari kombinasi antara pengetahuan teknis dan pemahaman proses bisnis.
                 </p>
                 <p>
-                    Saat tidak berkutat dengan terminal atau cloud console, saya menikmati waktu dengan membaca buku, berolahraga di gym, atau berjalan santai untuk menyegarkan pikiran.
+                    Melalui portofolio ini, saya ingin menunjukkan komitmen saya dalam berkarier di dunia cloud dan DevOps, serta semangat untuk terus <em>belajar dan berkontribusi secara nyata</em>.
                 </p>
             </div>
         </div>
     </section>
+    
 
     <section id="skills" class="py-16 md:py-20 bg-gray-50">
         <div class="container mx-auto px-6">
@@ -249,7 +261,7 @@
             <h2 class="text-3xl font-bold text-center mb-12 section-title">Proyek Saya</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-gray-50 p-6 rounded-lg shadow-lg project-card">
-                    <img src="/assets/diagram messaging app.png" alt="Arsitektur Simple Messaging App" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <img src="/assets/diagram messaging app.png" alt="Arsitektur Simple Messaging App" class="rounded-md mb-4 w-full h-48 object-cover" srcset="/assets/diagram messaging app.png 800w, /assets/diagram messaging app.png 1200w" sizes="(max-width: 600px) 600px, 1000px">
                     <h3 class="text-xl font-semibold mb-2 text-blue-700">Simple Messaging App</h3>
                     <p class="text-gray-600 text-sm mb-3">Teknologi: Go, MySQL, MongoDB, AWS, GitHub Action, ELK Stack</p>
                     <p class="text-gray-700 mb-4 line-clamp-custom">
@@ -336,7 +348,58 @@
         </div>
     </section>
 
-    <section id="contact" class="py-16 md:py-20 bg-white">
+    <section id="articles" class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Artikel Saya</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg article-card flex flex-col justify-between">
+                    <div>
+                        <img src="https://placehold.co/600x300/A0AEC0/4A5568?text=Artikel+1" alt="[Gambar Ilustrasi Artikel 1]" class="rounded-md mb-4 w-full h-40 object-cover">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-700">[Judul Artikel Medium Anda di Sini]</h3>
+                        <p class="text-gray-700 mb-4 text-sm article-line-clamp">
+                            [Deskripsi singkat atau cuplikan dari artikel Anda. Beberapa kalimat saja sudah cukup.]
+                        </p>
+                    </div>
+                    <a href="[LINK_KE_ARTIKEL_MEDIUM_ANDA_1]" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg text-center transition duration-300 self-start">
+                        Baca di Medium <i class="fab fa-medium-m ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg article-card flex flex-col justify-between">
+                    <div>
+                        <img src="https://placehold.co/600x300/718096/E2E8F0?text=Artikel+2" alt="[Gambar Ilustrasi Artikel 2]" class="rounded-md mb-4 w-full h-40 object-cover">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-700">[Judul Artikel Medium Lainnya]</h3>
+                        <p class="text-gray-700 mb-4 text-sm article-line-clamp">
+                            [Deskripsi singkat lainnya. Fokus pada apa yang akan didapatkan pembaca dari artikel ini.]
+                        </p>
+                    </div>
+                    <a href="[LINK_KE_ARTIKEL_MEDIUM_ANDA_2]" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg text-center transition duration-300 self-start">
+                        Baca di Medium <i class="fab fa-medium-m ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg article-card flex flex-col justify-between">
+                    <div>
+                        <img src="https://placehold.co/600x300/4A5568/A0AEC0?text=Artikel+3" alt="[Gambar Ilustrasi Artikel 3]" class="rounded-md mb-4 w-full h-40 object-cover">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-700">[Satu Lagi Judul Artikel Keren]</h3>
+                        <p class="text-gray-700 mb-4 text-sm article-line-clamp">
+                            [Jelaskan secara singkat mengapa artikel ini layak dibaca.]
+                        </p>
+                    </div>
+                    <a href="[LINK_KE_ARTIKEL_MEDIUM_ANDA_3]" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg text-center transition duration-300 self-start">
+                        Baca di Medium <i class="fab fa-medium-m ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="https://medium.com/@gilangswandaru" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300">
+                    Lihat Semua Artikel di Medium <i class="fab fa-medium ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 md:py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-12 section-title">Hubungi Saya</h2>
             <div class="max-w-xl mx-auto text-center">
