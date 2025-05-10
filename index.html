@@ -21,6 +21,22 @@
             background-color: #1a202c; /* Warna latar belakang gelap untuk hero */
             background-image: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
         }
+        @keyframes fade-in {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in 1s ease forwards;
+        }
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        .delay-500 {
+            animation-delay: 0.5s;
+        }
         .section-title {
             border-bottom: 3px solid #4a5568; /* Garis bawah untuk judul bagian */
             padding-bottom: 0.5rem;
@@ -63,101 +79,91 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header class="bg-gray-900 shadow-md sticky top-0 z-50 font-serif">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="flex items-center hover:opacity-90">
-        <svg width="180" height="50" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-            <style>
-                @keyframes drawLine {
-                    0% { stroke-dashoffset: 60; }
-                    100% { stroke-dashoffset: 0; }
-                }
-                .animated-line {
-                    stroke-dasharray: 60;
-                    stroke-dashoffset: 60;
-                    animation: drawLine 1.5s ease-in-out forwards;
-                }
-            </style>
-            <!-- Logo Content -->
-            <circle cx="30" cy="30" r="25" fill="#3B82F6" opacity="0.9"/>
-            <text x="30" y="42" font-family="Arial, sans-serif" font-weight="bold" font-size="32" text-anchor="middle" fill="white">GS</text>
-            <text x="85" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="18" fill="#374151">Gilang</text>
-            <text x="85" y="50" font-family="Arial, sans-serif" font-weight="bold" font-size="18" fill="#4B5563">Swandaru</text>
-            <line x1="65" y1="15" x2="65" y2="45" stroke="#3B82F6" stroke-width="2" class="animated-line"/>
-        </svg>
-    </a>
+                <svg width="180" height="50" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                    <style>
+                        @keyframes drawLine {
+                            0% { stroke-dashoffset: 60; }
+                            100% { stroke-dashoffset: 0; }
+                        }
+                        .animated-line {
+                            stroke-dasharray: 60;
+                            stroke-dashoffset: 60;
+                            animation: drawLine 1.5s ease-in-out forwards;
+                        }
+                    </style>
+                    <circle cx="30" cy="30" r="25" fill="#06b6d4" opacity="0.9" />
+                    <text x="30" y="42" font-family="Arial, sans-serif" font-weight="bold" font-size="32" text-anchor="middle" fill="white">GS</text>
+                    <text x="85" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="18" fill="#e0f2fe">Gilang</text>
+                    <text x="85" y="50" font-family="Arial, sans-serif" font-weight="bold" font-size="18" fill="#bae6fd">Swandaru</text>
+                    <line x1="65" y1="15" x2="65" y2="45" stroke="#06b6d4" stroke-width="2" class="animated-line"/>
+                </svg>
+            </a>
             <div class="hidden md:flex space-x-6">
-                <a href="#hero" class="text-gray-600 hover:text-blue-600">Beranda</a>
-                <a href="#about" class="text-gray-600 hover:text-blue-600">Tentang Saya</a>
-                <a href="#skills" class="text-gray-600 hover:text-blue-600">Keahlian</a>
-                <a href="#projects" class="text-gray-600 hover:text-blue-600">Proyek</a>
-                <a href="#education" class="text-gray-600 hover:text-blue-600">Pendidikan</a>
-                <a href="#articles" class="text-gray-600 hover:text-blue-600">Artikel</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-600">Kontak</a>
+                <a href="#hero" class="text-cyan-200 hover:text-white transition">Beranda</a>
+                <a href="#about" class="text-cyan-200 hover:text-white transition">Tentang Saya</a>
+                <a href="#skills" class="text-cyan-200 hover:text-white transition">Keahlian</a>
+                <a href="#projects" class="text-cyan-200 hover:text-white transition">Proyek</a>
+                <a href="#education" class="text-cyan-200 hover:text-white transition">Pendidikan</a>
+                <a href="#articles" class="text-cyan-200 hover:text-white transition">Artikel</a>
+                <a href="#contact" class="text-cyan-200 hover:text-white transition">Kontak</a>
             </div>
             <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                <button id="mobile-menu-button" class="text-cyan-200 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
                 </button>
             </div>
         </nav>
-        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg absolute w-full">
-            <a href="#hero" class="block px-6 py-3 text-gray-600 hover:bg-blue-500 hover:text-white">Beranda</a>
-            <a href="#about" class="block px-6 py-3 text-gray-600 hover:bg-blue-500 hover:text-white">Tentang Saya</a>
-            <a href="#skills" class="block px-6 py-3 text-gray-600 hover:bg-blue-500 hover:text-white">Keahlian</a>
-            <a href="#projects" class="block px-6 py-3 text-gray-600 hover:bg-blue-500 hover:text-white">Proyek</a>
-            <a href="#education" class="block px-6 py-3 text-gray-600 hover:bg-blue-500 hover:text-white">Pendidikan</a>
-            <a href="#articles" class="block px-6 py-3 text-gray-600 hover:bg-blue-500 hover:text-white">Artikel</a>
-            <a href="#contact" class="block px-6 py-3 text-gray-600 hover:bg-blue-500 hover:text-white">Kontak</a>
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-900 shadow-lg absolute w-full z-40">
+            <a href="#hero" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Beranda</a>
+            <a href="#about" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Tentang Saya</a>
+            <a href="#skills" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Keahlian</a>
+            <a href="#projects" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Proyek</a>
+            <a href="#education" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Pendidikan</a>
+            <a href="#articles" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Artikel</a>
+            <a href="#contact" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Kontak</a>
         </div>
     </header>
+    
 
-    <section id="hero" class="hero-bg text-white py-20 md:py-32">
-        <div class="container mx-auto px-6 text-center">
-            <img src="/assets/profile.jpg" alt="Foto Profil Anda" class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full mb-6 border-4 border-blue-400 object-cover">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Halo, Saya Gilang Swandaru</h1>
-            <p class="text-xl md:text-2xl mb-8 text-blue-300">Aspiring Cloud & DevOps Engineer</p>
-            <p class="text-lg max-w-2xl mx-auto mb-10">
-                Sebagai seorang enthusiast di bidang cloud computing dan DevOps, saya berfokus pada pembangunan infrastruktur yang efisien dan siap skalasi. Dengan semangat untuk terus belajar dan berkembang, saya siap berkontribusi dalam menciptakan solusi yang mendukung kebutuhan bisnis yang terus berubah.
+    <section id="hero" class="relative py-24 md:py-36 text-white bg-gradient-to-tr from-[#0f172a] via-[#1e293b] to-[#0f172a] overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <img src="/assets/profile.jpg" alt="Foto Profil Anda" class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full mb-6 border-4 border-cyan-400 object-cover shadow-lg">
+      
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-[0_1px_10px_rgba(0,255,255,0.4)] animate-fade-in">
+            Halo, Saya Gilang Swandaru
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-cyan-300 font-medium animate-fade-in delay-200">
+            Aspiring Cloud & DevOps Engineer
             </p>
-            <div class="flex flex-col items-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 sm:justify-center">
-                <a href="#projects" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300">Lihat Proyek Saya</a>
-                <a href="#contact" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300">Hubungi Saya</a>
-            </div>
-            <!-- <div class="mt-12 flex justify-center space-x-6">
-                <a href="https://linkedin.com/in/gilang-swandaru" target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-white transition duration-300">
-                    <i class="fab fa-linkedin fa-2x"></i>
-                </a>
-                <a href="https://github.com/glng-swndru" target="_blank" rel="noopener noreferrer" class="text-blue-300 hover:text-white transition duration-300">
-                    <i class="fab fa-github fa-2x"></i>
-                </a>
-            </div> -->
+            <p class="text-lg max-w-2xl mx-auto mb-10 text-gray-300 animate-fade-in delay-300">
+            Saya fokus pada pembangunan infrastruktur cloud yang efisien dan siap skalasi, dengan semangat belajar dan eksplorasi teknologi seperti AWS, Terraform, dan DevOps tools lainnya.
+            </p>
         </div>
     </section>
 
-    <section id="about" class="py-16 md:py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 section-title">Tentang Saya</h2>
-            <div class="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed">
-                <p class="mb-4">
-                    Saya merupakan lulusan <strong>Teknologi Informasi</strong> yang saat ini sedang fokus membangun karier di bidang <strong>Cloud Computing</strong> dan <strong>DevOps Engineering</strong>. Meskipun pengalaman kerja saya sebelumnya berada di luar bidang IT, saya aktif mengembangkan kompetensi teknis melalui <em>pembelajaran mandiri</em> dan proyek-proyek pribadi.
-                </p>
-                <p class="mb-4">
-                    Saat ini saya mendalami layanan <strong>AWS</strong>, praktik <strong>Infrastructure as Code</strong> menggunakan <strong>Terraform</strong>, serta membangun aplikasi sederhana dengan <strong>Golang</strong>. Saya percaya bahwa teknologi yang efektif lahir dari kombinasi antara pengetahuan teknis dan pemahaman proses bisnis.
-                </p>
-                <p>
-                    Melalui portofolio ini, saya ingin menunjukkan komitmen saya dalam berkarier di dunia cloud dan DevOps, serta semangat untuk terus <em>belajar dan berkontribusi secara nyata</em>.
-                </p>
+    <section id="about" class="relative py-24 md:py-32 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title text-cyan-300 drop-shadow-md">Tentang Saya</h2>
+            <div class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-300">
+                <p class="mb-4">Saya adalah lulusan Teknologi Informasi yang sedang berfokus membangun karier di bidang <span class="text-cyan-400 font-semibold">Cloud Computing</span> dan <span class="text-cyan-400 font-semibold">DevOps Engineering</span>. Meskipun pengalaman kerja sebelumnya berada di luar bidang IT, saya aktif memperdalam keterampilan teknis melalui proyek pribadi dan pembelajaran mandiri.</p>
+                <p class="mb-4">Saat ini saya mendalami layanan <span class="text-cyan-400">AWS</span>, praktik <span class="text-cyan-400">Infrastructure as Code</span> dengan <span class="text-cyan-400">Terraform</span>, serta membangun aplikasi dengan <span class="text-cyan-400">Golang</span>. Saya percaya bahwa teknologi yang efektif lahir dari kombinasi antara <span class="font-medium">penguasaan teknis</span> dan <span class="font-medium">pemahaman proses bisnis</span>.</p>
+                <p>Portofolio ini saya buat sebagai bentuk dokumentasi belajar dan kontribusi saya dalam ekosistem teknologi yang terus berkembang.</p>
             </div>
         </div>
     </section>
     
 
-    <section id="skills" class="py-16 md:py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-12 section-title">Keahlian Teknis</h2>
+    <section id="skills" class="relative py-24 md:py-32 bg-gradient-to-br from-[#1a1a2e] via-[#0f3460] to-[#16213e] text-white">
+        <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title text-cyan-300 drop-shadow-md">Keahlian Teknis</h2>
         <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-8 justify-items-center">
             
             <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
@@ -256,117 +262,114 @@
     </section>
 
 
-    <section id="projects" class="py-16 md:py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 section-title">Proyek Saya</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg project-card">
-                    <img src="/assets/diagram messaging app.png" alt="Arsitektur Simple Messaging App" class="rounded-md mb-4 w-full h-48 object-cover" srcset="/assets/diagram messaging app.png 800w, /assets/diagram messaging app.png 1200w" sizes="(max-width: 600px) 600px, 1000px">
-                    <h3 class="text-xl font-semibold mb-2 text-blue-700">Simple Messaging App</h3>
-                    <p class="text-gray-600 text-sm mb-3">Teknologi: Go, MySQL, MongoDB, AWS, GitHub Action, ELK Stack</p>
-                    <p class="text-gray-700 mb-4 line-clamp-custom">
-                        Mengembangkan aplikasi messaging real-time ringan dengan fokus pada backend dan infrastruktur. Dibangun menggunakan Go (Golang) dengan framework Fiber untuk menangani otentikasi pengguna (via MySQL) dan pertukaran pesan real-time (via WebSockets, disimpan di MongoDB). Aplikasi dideploy di AWS (EC2, RDS) dengan pipeline CI/CD menggunakan GitHub Actions serta implementasi monitoring dan logging terpusat via ELK Stack.
-                    </p>
-                    <a href="https://github.com/glng-swndru/messaging-app" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-semibold">
-                        Lihat di GitHub <i class="fab fa-github ml-1"></i>
-                    </a>
-                </div>
-
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg project-card">
-                    <img src="/assets/66a2524e228b655073c3e63e_spotify latenode.png" alt="Spotify API" class="rounded-md mb-4 w-full h-48 object-cover">
-                    <h3 class="text-xl font-semibold mb-2 text-blue-700">Music Catalog API</h3>
-                    <p class="text-gray-600 text-sm mb-3">Teknologi: Go, Go Fiber, PostgreSQL, Spotify API, Docker</p>
-                    <p class="text-gray-700 mb-4 text-gray-700 mb-4 line-clamp-custom">
-                        Aplikasi web berbasis Go yang memungkinkan pengguna mengelola preferensi musik dan aktivitas mereka, dengan integrasi mendalam ke Spotify API. Fitur utama meliputi manajemen pengguna (registrasi, login), pencatatan aktivitas suka/tidak suka pada lagu, pencarian lagu via Spotify API, dan rekomendasi lagu personal. Data pengguna dan aktivitas disimpan secara persisten menggunakan PostgreSQL, dengan backend yang diekspos melalui RESTful API. PostgreSQL dijalankan menggunakan Docker untuk kemudahan setup.
-                    </p>
-                    <a href="https://github.com/glng-swndru/music-catalog" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-semibold">
-                        Lihat di GitHub <i class="fab fa-github ml-1"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="py-16 md:py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 section-title">Pendidikan & Sertifikasi</h2>
-            <div class="max-w-3xl mx-auto">
-                <div class="mb-8">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Pendidikan Formal</h3>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="text-xl font-semibold text-blue-700">Institut Teknologi Sapta Mandiri</h4>
-                        <p class="text-gray-600">Sarjana - Teknologi Informasi</p>
-                        <p class="text-sm text-gray-500">Tahun Lulus: 2024</p>
-                        <p class="mt-2 text-gray-700">Proyek Akhir/Skripsi: <i>Penggunaan Alat Pelindung Diri pada Pekerja Berbasis Web Browser Menggunakan YOLOv8 dan TensorFlow.js</i></p>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Sertifikasi & Kursus Online</h3>
-                    <div class="bg-white p-6 rounded-lg shadow-md space-y-3">
-                        <div>
-                            <h4 class="text-lg font-semibold text-blue-700">AWS Certified Cloud Practitioner</h4>
-                            <p class="text-sm text-gray-500">Diperoleh: Februari 2025</p>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-blue-700">Certified Network Security Practitioner (CNSP)</h4>
-                            <p class="text-sm text-gray-500">Diperoleh: Agustus 2024</p>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-blue-700">Google Cloud Digital Leader</h4>
-                            <p class="text-sm text-gray-500">Diperoleh: Februari 2024</p>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-blue-700">Google Associate Cloud Engineer</h4>
-                            <p class="text-sm text-gray-500">Diperoleh: November 2023</p>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-blue-700">AWS re/Start Program Batch 9</h4>
-                            <p class="text-sm text-gray-500">Platform: Orbit Future Academy​</p>
-                            <p class="text-sm text-gray-500">Periode: Juni - September 2024</p>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-blue-700">Cloud Computing Cohort</h4>
-                            <p class="text-sm text-gray-500">Platform: Bangkit Academy​ ​</p>
-                            <p class="text-sm text-gray-500">Periode: Februari - Juli 2023</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="articles" class="py-16 md:py-20 bg-white">
-        <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-12 section-title">Artikel Saya</h2>
+    <section id="projects" class="relative py-24 md:py-32 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title text-cyan-300 drop-shadow-md">Proyek Saya</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <!-- Artikel 1 -->
-            <div class="bg-gray-50 p-6 rounded-lg shadow-lg article-card flex flex-col justify-between">
-            <div>
-                <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*dSSRT9mjJnj1vRMMWvUCLQ.png" alt="Ilustrasi Artikel Terraform Basics" class="rounded-md mb-4 w-full h-40 object-cover">
-                <h3 class="text-xl font-semibold mb-2 text-blue-700">Getting Started with Terraform: Basics, CLI, and Configuration Files</h3>
-                <p class="text-gray-700 mb-4 text-sm article-line-clamp">
-                Pelajari dasar-dasar Terraform, perintah CLI utama, dan struktur file konfigurasi untuk memulai perjalanan Anda dengan Infrastructure as Code.
+      
+            <!-- Project Card 1 -->
+            <div class="bg-white/10 backdrop-blur-md rounded-lg shadow-lg p-6 border border-cyan-500/30 hover:scale-[1.02] transition">
+                <img src="/assets/diagram messaging app.png" alt="Simple Messaging App" class="rounded-md mb-4 w-full h-48 object-cover border border-cyan-300">
+                <h3 class="text-xl font-semibold mb-2 text-cyan-300">Simple Messaging App</h3>
+                <p class="text-sm text-cyan-100 mb-3">Teknologi: Go, MySQL, MongoDB, AWS, GitHub Action, ELK Stack</p>
+                <p class="text-gray-200 mb-4 text-sm line-clamp-custom">
+                Aplikasi real-time ringan menggunakan Go (Fiber), WebSocket, dan deployment di AWS. Termasuk CI/CD dengan GitHub Actions dan observabilitas via ELK Stack.
                 </p>
+                <a href="https://github.com/glng-swndru/messaging-app" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline font-semibold">
+                Lihat di GitHub <i class="fab fa-github ml-1"></i>
+                </a>
             </div>
-            <a href="https://medium.com/@gilangswandaru27/getting-started-with-terraform-basics-cli-and-configuration-files-a4e7e7c33cd0" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg text-center transition duration-300 self-start">
-                Baca di Medium <i class="fab fa-medium-m ml-2"></i>
-            </a>
-            </div>
-            <!-- Artikel 2 -->
-            <div class="bg-gray-50 p-6 rounded-lg shadow-lg article-card flex flex-col justify-between">
-            <div>
-                <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*6SKxlu4EiAnHQnrTdQza6A.jpeg" alt="Ilustrasi Artikel Pengenalan IaC" class="rounded-md mb-4 w-full h-40 object-cover">
-                <h3 class="text-xl font-semibold mb-2 text-blue-700">Introduction to Terraform and Infrastructure as Code (IaC)</h3>
-                <p class="text-gray-700 mb-4 text-sm article-line-clamp">
-                Pahami konsep Infrastructure as Code (IaC) dan bagaimana Terraform membantu Anda mengelola infrastruktur cloud secara efisien dan konsisten.
+      
+            <!-- Project Card 2 -->
+            <div class="bg-white/10 backdrop-blur-md rounded-lg shadow-lg p-6 border border-cyan-500/30 hover:scale-[1.02] transition">
+                <img src="/assets/66a2524e228b655073c3e63e_spotify latenode.png" alt="Spotify API" class="rounded-md mb-4 w-full h-48 object-cover border border-cyan-300">
+                <h3 class="text-xl font-semibold mb-2 text-cyan-300">Music Catalog API</h3>
+                <p class="text-sm text-cyan-100 mb-3">Teknologi: Go, Go Fiber, PostgreSQL, Spotify API, Docker</p>
+                <p class="text-gray-200 mb-4 text-sm line-clamp-custom">
+                Backend API untuk mengelola preferensi musik, login, pencarian lagu, dan rekomendasi dengan integrasi Spotify. PostgreSQL dikelola dengan Docker.
                 </p>
+                <a href="https://github.com/glng-swndru/music-catalog" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline font-semibold">
+                Lihat di GitHub <i class="fab fa-github ml-1"></i>
+                </a>
             </div>
-            <a href="https://medium.com/@gilangswandaru27/introduction-to-terraform-and-infrastructure-as-code-iac-2283d50df63f" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg text-center transition duration-300 self-start">
-                Baca di Medium <i class="fab fa-medium-m ml-2"></i>
-            </a>
+      
             </div>
+        </div>
+    </section>
+      
+
+    <section id="education" class="relative py-24 md:py-32 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title text-cyan-300 drop-shadow-md">Pendidikan & Sertifikasi</h2>
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+      
+            <!-- Pendidikan -->
+            <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold text-cyan-300 mb-2">Pendidikan Formal</h3>
+                <p class="text-lg text-white font-semibold">Institut Teknologi Sapta Mandiri</p>
+                <p class="text-sm text-gray-300 mb-1">Sarjana - Teknologi Informasi</p>
+                <p class="text-sm text-gray-400 mb-2">Tahun Lulus: 2024</p>
+                <p class="text-sm text-gray-200 italic">Skripsi: Penggunaan Alat Pelindung Diri pada Pekerja Berbasis Web Browser Menggunakan YOLOv8 dan TensorFlow.js</p>
+            </div>
+      
+            <!-- Sertifikasi -->
+            <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold text-cyan-300 mb-2">Sertifikasi</h3>
+                <ul class="text-sm text-gray-200 space-y-2">
+                <li><span class="text-white font-semibold">AWS Certified Cloud Practitioner</span> – Feb 2025</li>
+                <li><span class="text-white font-semibold">Certified Network Security Practitioner (CNSP)</span> – Ags 2024</li>
+                <li><span class="text-white font-semibold">Google Cloud Digital Leader</span> – Feb 2024</li>
+                <li><span class="text-white font-semibold">Google Associate Cloud Engineer</span> – Nov 2023</li>
+                </ul>
+            </div>
+      
+            <!-- Pelatihan -->
+            <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg shadow-lg md:col-span-2">
+                <h3 class="text-xl font-semibold text-cyan-300 mb-2">Kursus & Pelatihan</h3>
+                <ul class="text-sm text-gray-200 space-y-2">
+                <li><span class="text-white font-semibold">AWS re/Start Program Batch 9</span> – Orbit Future Academy (Juni – Sep 2024)</li>
+                <li><span class="text-white font-semibold">Cloud Computing Cohort</span> – Bangkit Academy (Feb – Jul 2023)</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="articles" class="relative py-24 md:py-32 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] text-white">
+        <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-center mb-12 font-bold section-title text-cyan-300 drop-shadow-md">Artikel Saya</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+
+            <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                <div>
+                    <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*dSSRT9mjJnj1vRMMWvUCLQ.png" alt="Terraform Basics" class="rounded-md mb-4 w-full h-40 object-cover border border-cyan-300">
+                    <h3 class="text-xl font-semibold text-cyan-300 mb-2">Getting Started with Terraform: Basics, CLI, and Configuration Files</h3>
+                    <p class="text-sm text-gray-200 line-clamp-4"> Pelajari dasar-dasar Terraform, perintah CLI utama, dan struktur file konfigurasi untuk memulai perjalanan Anda dengan Infrastructure as Code.
+                    </p>
+                </div>
+                <a href="https://medium.com/@gilangswandaru27/getting-started-with-terraform-basics-cli-and-configuration-files-a4e7e7c33cd0" target="_blank" class="mt-4 text-cyan-400 hover:underline font-semibold">Baca di Medium</a>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                <div>
+                    <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*6SKxlu4EiAnHQnrTdQza6A.jpeg" alt="Intro IaC" class="rounded-md mb-4 w-full h-40 object-cover border border-cyan-300">
+                    <h3 class="text-xl font-semibold text-cyan-300 mb-2">Introduction to Terraform and Infrastructure as Code (IaC)</h3>
+                    <p class="text-sm text-gray-200 line-clamp-4"> Pahami konsep Infrastructure as Code (IaC) dan bagaimana Terraform membantu mengelola infrastruktur cloud secara efisien dan konsisten.
+                    </p>
+                </div>
+                <a href="https://medium.com/@gilangswandaru27/introduction-to-terraform-and-infrastructure-as-code-iac-2283d50df63f" target="_blank" class="mt-4 text-cyan-400 hover:underline font-semibold">Baca di Medium</a>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                <div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoPg_J6Mrj6wh1Ob73zsrBizjKe9-zXsUTWw&s" alt="Gambar Google Cloud Security Command Center" class="rounded-md mb-4 w-full h-40 object-cover border border-cyan-300">
+                    <h3 class="text-xl font-semibold text-cyan-300 mb-2">Using Google Cloud Security Command Center for Threat Hunting and Security Incident Investigation</h3>
+                    <p class="text-sm text-gray-200 line-clamp-4"> Google Cloud Security Command Center (SCC) adalah platform manajemen keamanan dan risiko yang canggih untuk pengguna Google Cloud. Artikel ini akan memandu Anda menggunakan SCC untuk perburuan ancaman (threat hunting) yang efektif dan investigasi insiden keamanan yang efisien.
+                    </p>
+                </div>
+                <a href="https://medium.com/@gilangswandaru27/using-google-cloud-security-command-center-for-threat-hunting-and-security-incident-investigation-c1f91ec43f3c" target="_blank" class="mt-4 text-cyan-400 hover:underline font-semibold">Baca di Medium</a>
+            </div>
+
         </div>
         <div class="text-center mt-12">
             <a href="https://medium.com/@gilangswandaru27" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300">
@@ -376,11 +379,11 @@
         </div>
     </section>
 
-    <section id="contact" class="py-16 md:py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 section-title">Hubungi Saya</h2>
+    <section id="contact" class="relative py-24 md:py-32 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title text-cyan-300 drop-shadow-md">Hubungi Saya</h2>
             <div class="max-w-xl mx-auto text-center">
-                <p class="text-lg text-gray-700 mb-8">
+                <p class="text-lg text-cyan-700 mb-8">
                     Saya sangat antusias untuk membahas peluang, proyek, atau sekadar bertukar pikiran mengenai teknologi cloud dan DevOps. Jangan ragu untuk menghubungi saya!
                 </p>
                 <a href="mailto:emailanda@gilangswandaru27.com" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 mb-6">
@@ -400,9 +403,15 @@
         </div>
     </section>
 
-    <footer class="bg-gray-800 text-gray-300 py-8 text-center">
+    <footer class="bg-gray-900 text-cyan-200 py-8 text-center border-t border-cyan-500 font-serif shadow-inner">
         <div class="container mx-auto px-6">
-            <p>&copy; <span id="currentYear"></span> Gilang Swandaru. Dibuat dengan <i class="fas fa-heart text-red-500"></i> dan Tailwind CSS.</p>
+            <p class="text-lg italic tracking-wide">
+                &copy; <span id="currentYear"></span> Gilang Swandaru. 
+                <span class="text-cyan-400 font-bold">Shangri-La Frontier</span>-inspired.
+            </p>
+            <p class="mt-2 text-sm text-cyan-300">
+                "Dalam dunia bug dan monster, hanya yang gigih bisa naik level."
+            </p>
         </div>
     </footer>
 
