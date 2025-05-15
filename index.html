@@ -1,85 +1,77 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="/assets/favicon.ico" />
-<title> Gilangswndru | Cloud enthusiast</title>
+<title>Gilang Swandaru | Cloud Enthusiast</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
-        html {
-            scroll-behavior: smooth;
-        }
+    html {
+        scroll-behavior: smooth;
+    }
 
-        /* Gaya kustom tambahan jika diperlukan */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .hero-bg {
-            background-color: #1a202c; /* Warna latar belakang gelap untuk hero */
-            background-image: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-        }
-        @keyframes fade-in {
-            0% { opacity: 0; transform: translateY(10px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in {
-            animation: fade-in 1s ease forwards;
-        }
-        .delay-200 {
-            animation-delay: 0.2s;
-        }
-        .delay-300 {
-            animation-delay: 0.3s;
-        }
-        .delay-500 {
-            animation-delay: 0.5s;
-        }
-        .section-title {
-            border-bottom: 3px solid #4a5568; /* Garis bawah untuk judul bagian */
-            padding-bottom: 0.5rem;
-            display: inline-block;
-        }
-        .project-card .article-card {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        /* Gaya untuk tombol navigasi mobile */
-        #mobile-menu {
-            transition: transform 0.3s ease-in-out;
-        }
-        .skill-logo-container {
-            filter: grayscale(50%); /* Membuat logo sedikit abu-abu */
-            transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-        .skill-logo-container:hover {
-            filter: grayscale(0%); /* Warna penuh saat hover */
-            transform: scale(1.1);
-        }
-        .line-clamp-custom {
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            line-clamp: 3; /* Standard property for compatibility */
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        .article-line-clamp { /* Kelas baru untuk deskripsi artikel jika perlu baris berbeda */
-            display: -webkit-box;
-            -webkit-line-clamp: 2; /* Contoh: 2 baris untuk deskripsi artikel */
-            line-clamp: 2; /* Standard property for compatibility */
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-    </style>
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+    .hero-bg { /* Kept as an example if you use it, though hero section has its own gradient */
+        background-color: #1a202c; 
+        background-image: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    }
+    @keyframes fade-in {
+        0% { opacity: 0; transform: translateY(10px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+        animation: fade-in 1s ease forwards;
+    }
+    .delay-200 {
+        animation-delay: 0.2s;
+    }
+    .delay-300 {
+        animation-delay: 0.3s;
+    }
+    .delay-500 {
+        animation-delay: 0.5s;
+    }
+    .section-title {
+        border-bottom: 3px solid #4a5568; /* Underline for section titles */
+        padding-bottom: 0.5rem;
+        display: inline-block;
+    }
+    .project-card { /* Main container for project card hover effect */
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .project-card:hover { /* Apply hover to the .project-card div if you add this class to the parent card div */
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    #mobile-menu {
+        transition: transform 0.3s ease-in-out; /* Kept for consistency, though Tailwind handles hidden/block */
+    }
+    .skill-logo-container {
+        filter: grayscale(50%); 
+        transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    .skill-logo-container:hover {
+        filter: grayscale(0%); 
+        transform: scale(1.1);
+    }
+    .line-clamp-custom { /* For project descriptions, consistent 2 lines */
+        display: -webkit-box;
+        -webkit-line-clamp: 2; 
+        line-clamp: 2; 
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    /* Removed .article-line-clamp as Tailwind's line-clamp-4 is used directly in HTML */
+</style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-    <header class="bg-gray-900 shadow-md sticky top-0 z-50 font-serif">
+    <header class="bg-gray-900 shadow-md sticky top-0 z-50 font-sans"> {/* Changed to font-sans */}
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="flex items-center hover:opacity-90">
                 <svg width="180" height="50" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
@@ -102,13 +94,13 @@
                 </svg>
             </a>
             <div class="hidden md:flex space-x-6">
-                <a href="#hero" class="text-cyan-200 hover:text-white transition">Beranda</a>
-                <a href="#about" class="text-cyan-200 hover:text-white transition">Tentang Saya</a>
-                <a href="#skills" class="text-cyan-200 hover:text-white transition">Keahlian</a>
-                <a href="#projects" class="text-cyan-200 hover:text-white transition">Proyek</a>
-                <a href="#education" class="text-cyan-200 hover:text-white transition">Pendidikan</a>
-                <a href="#articles" class="text-cyan-200 hover:text-white transition">Artikel</a>
-                <a href="#contact" class="text-cyan-200 hover:text-white transition">Kontak</a>
+                <a href="#hero" class="text-cyan-200 hover:text-white transition">Home</a>
+                <a href="#about" class="text-cyan-200 hover:text-white transition">About Me</a>
+                <a href="#skills" class="text-cyan-200 hover:text-white transition">Skills</a>
+                <a href="#projects" class="text-cyan-200 hover:text-white transition">Projects</a>
+                <a href="#education" class="text-cyan-200 hover:text-white transition">Education</a>
+                <a href="#articles" class="text-cyan-200 hover:text-white transition">Articles</a>
+                <a href="#contact" class="text-cyan-200 hover:text-white transition">Contact</a>
             </div>
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-cyan-200 focus:outline-none">
@@ -121,49 +113,47 @@
             </div>
         </nav>
         <div id="mobile-menu" class="md:hidden hidden bg-gray-900 shadow-lg absolute w-full z-40">
-            <a href="#hero" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Beranda</a>
-            <a href="#about" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Tentang Saya</a>
-            <a href="#skills" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Keahlian</a>
-            <a href="#projects" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Proyek</a>
-            <a href="#education" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Pendidikan</a>
-            <a href="#articles" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Artikel</a>
-            <a href="#contact" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Kontak</a>
+            <a href="#hero" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Home</a>
+            <a href="#about" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">About Me</a>
+            <a href="#skills" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Skills</a>
+            <a href="#projects" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Projects</a>
+            <a href="#education" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Education</a>
+            <a href="#articles" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Articles</a>
+            <a href="#contact" class="block px-6 py-3 text-cyan-200 hover:bg-cyan-700 hover:text-white">Contact</a>
         </div>
     </header>
     
-
     <section id="hero" class="relative py-24 md:py-36 text-white bg-gradient-to-tr from-[#0f172a] via-[#1e293b] to-[#0f172a] overflow-hidden">
         <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
         <div class="container mx-auto px-6 relative z-10 text-center">
-            <img src="/assets/profile.jpg" alt="Foto profil Gilang Swandaru" class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full mb-6 border-4 border-cyan-400 object-cover shadow-lg">
-      
+            <img src="/assets/profile.jpg" alt="Profile picture of Gilang Swandaru" class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full mb-6 border-4 border-cyan-400 object-cover shadow-lg">
+        
             <h1 class="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-[0_1px_10px_rgba(0,255,255,0.4)] animate-fade-in">
-            Halo, Saya Gilang Swandaru
+            Hello, I'm Gilang Swandaru
             </h1>
             <p class="text-xl md:text-2xl mb-8 text-cyan-300 font-medium animate-fade-in delay-200">
             Aspiring Cloud & DevOps Engineer
             </p>
             <p class="text-lg max-w-2xl mx-auto mb-10 text-gray-300 animate-fade-in delay-300">
-            Saya fokus pada pembangunan infrastruktur cloud yang efisien dan siap skalasi, dengan semangat belajar dan eksplorasi teknologi seperti AWS, Terraform, dan DevOps tools lainnya.
+            I focus on building efficient and scalable cloud infrastructure, with a passion for learning and exploring technologies like AWS, Terraform, and other DevOps tools.
             </p>
         </div>
     </section>
 
     <section id="about" class="relative py-24 md:py-32 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] text-white">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title text-cyan-300 drop-shadow-md">Tentang Saya</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title text-cyan-300 drop-shadow-md">About Me</h2>
             <div class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-300">
-                <p class="mb-4">Saya adalah lulusan Teknologi Informasi yang sedang berfokus membangun karier di bidang <span class="text-cyan-400 font-semibold">Cloud Computing</span> dan <span class="text-cyan-400 font-semibold">DevOps Engineering</span>. Meskipun pengalaman kerja sebelumnya berada di luar bidang IT, saya aktif memperdalam keterampilan teknis melalui proyek pribadi dan pembelajaran mandiri.</p>
-                <p class="mb-4">Saat ini saya mendalami layanan <span class="text-cyan-400">AWS</span>, praktik <span class="text-cyan-400">Infrastructure as Code</span> dengan <span class="text-cyan-400">Terraform</span>, serta membangun aplikasi dengan <span class="text-cyan-400">Golang</span>. Saya percaya bahwa teknologi yang efektif lahir dari kombinasi antara <span class="font-medium">penguasaan teknis</span> dan <span class="font-medium">pemahaman proses bisnis</span>.</p>
-                <p>Portofolio ini saya buat sebagai bentuk dokumentasi belajar dan kontribusi saya dalam ekosistem teknologi yang terus berkembang.</p>
+                <p class="mb-4">I am an Information Technology graduate focused on building a career in <span class="text-cyan-400 font-semibold">Cloud Computing</span> and <span class="text-cyan-400 font-semibold">DevOps Engineering</span>. Although my previous work experience was outside of IT, I am actively deepening my technical skills through personal projects and self-study.</p>
+                <p class="mb-4">Currently, I am diving deep into <span class="text-cyan-400">AWS</span> services, <span class="text-cyan-400">Infrastructure as Code</span> practices with <span class="text-cyan-400">Terraform</span>, and building applications with <span class="text-cyan-400">Golang</span>. I believe that effective technology is born from a combination of <span class="font-medium">technical mastery</span> and <span class="font-medium">understanding business processes</span>.</p>
+                <p>I created this portfolio to document my learning journey and contributions to the ever-evolving tech ecosystem.</p>
             </div>
         </div>
     </section>
     
-
     <section id="skills" class="relative py-24 md:py-32 bg-gradient-to-br from-[#1a1a2e] via-[#0f3460] to-[#16213e] text-white">
         <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title text-cyan-300 drop-shadow-md">Keahlian Teknis</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title text-cyan-300 drop-shadow-md">Technical Skills</h2>
         <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-8 justify-items-center">
             
             <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
@@ -201,7 +191,6 @@
             <p class="text-sm font-medium text-gray-700 text-center min-h-[2.5rem] flex items-center justify-center">Jenkins</p>
             </div>
 
-            <!-- GitHub Actions tidak tersedia di Devicon -->
             <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
             <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/githubactions.svg" alt="GitHub Actions Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
             <p class="text-sm font-medium text-gray-700 text-center min-h-[2.5rem] flex items-center justify-center">GitHub Actions</p>
@@ -238,7 +227,7 @@
             </div>
 
             <div class="skill-logo-container flex flex-col items-center p-4 bg-white rounded-xl shadow-lg w-full max-w-[150px] aspect-square justify-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg" alt="Elastic Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch Logo" class="h-12 w-12 md:h-16 md:w-16 mb-2 object-contain">
                 <p class="text-sm font-medium text-gray-700 text-center min-h-[2.5rem] flex items-center justify-center">Elasticsearch</p>
             </div>
 
@@ -257,37 +246,34 @@
                 <p class="text-sm font-medium text-gray-700 text-center min-h-[2.5rem] flex items-center justify-center">Bash Script</p>
             </div>
         </div>
-        <p class="text-center text-gray-300 mt-10">Dan teknologi pendukung lainnya dalam ekosistem Cloud & DevOps.</p>
+        <p class="text-center text-gray-300 mt-10">And other supporting technologies within the Cloud & DevOps ecosystem.</p>
         </div>
     </section>
 
-
     <section id="projects" class="relative py-24 md:py-32 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] text-white">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title text-cyan-300 drop-shadow-md">Proyek Saya</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title text-cyan-300 drop-shadow-md">My Projects</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Project Card 1 -->
-            <div class="bg-white/10 backdrop-blur-md rounded-lg shadow-lg p-6 border border-cyan-500/30 hover:scale-[1.02] transition">
-                <img src="/assets/diagram messaging app.png" alt="Simple Messaging App" class="rounded-md mb-4 w-full h-48 object-cover border border-cyan-300">
+            <div class="project-card bg-white/10 backdrop-blur-md rounded-lg shadow-lg p-6 border border-cyan-500/30 hover:scale-[1.02] transition">
+                <img src="/assets/diagram messaging app.png" alt="Simple Messaging App Diagram" class="rounded-md mb-4 w-full h-48 object-cover border border-cyan-300">
                 <h3 class="text-xl font-semibold mb-2 text-cyan-300">Simple Messaging App</h3>
-                <p class="text-sm text-cyan-100 mb-3">Teknologi: Go, MySQL, MongoDB, AWS, GitHub Action, ELK Stack</p>
-                <p class="text-gray-200 mb-4 text-sm line-clamp-custom">
-                Aplikasi real-time ringan menggunakan Go (Fiber), WebSocket, dan deployment di AWS. Termasuk CI/CD dengan GitHub Actions dan observabilitas via ELK Stack.
+                <p class="text-sm text-cyan-100 mb-3">Technologies: Go, MySQL, MongoDB, AWS, GitHub Actions, ELK Stack</p>
+                <p class="text-gray-200 mb-4 text-sm line-clamp-custom"> {/* Uses .line-clamp-custom (2 lines) */}
+                A lightweight real-time application using Go (Fiber), WebSockets, deployed on AWS. Includes CI/CD with GitHub Actions and observability via ELK Stack.
                 </p>
                 <a href="https://github.com/glng-swndru/messaging-app" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline font-semibold">
-                Lihat di GitHub <i class="fab fa-github ml-1"></i>
+                View on GitHub <i class="fab fa-github ml-1"></i>
                 </a>
             </div>
-            <!-- Project Card 2 -->
-            <div class="bg-white/10 backdrop-blur-md rounded-lg shadow-lg p-6 border border-cyan-500/30 hover:scale-[1.02] transition">
-                <img src="/assets/diagram spotify api.png" alt="Spotify API" class="rounded-md mb-4 w-full h-48 object-cover border border-cyan-300">
+            <div class="project-card bg-white/10 backdrop-blur-md rounded-lg shadow-lg p-6 border border-cyan-500/30 hover:scale-[1.02] transition">
+                <img src="/assets/diagram spotify api.png" alt="Music Catalog API Diagram" class="rounded-md mb-4 w-full h-48 object-cover border border-cyan-300">
                 <h3 class="text-xl font-semibold mb-2 text-cyan-300">Music Catalog API</h3>
-                <p class="text-sm text-cyan-100 mb-3">Teknologi: Go, Go Fiber, PostgreSQL, Spotify API, Docker</p>
-                <p class="text-gray-200 mb-4 text-sm line-clamp-custom">
-                Backend API untuk mengelola preferensi musik, login, pencarian lagu, dan rekomendasi dengan integrasi Spotify. PostgreSQL dikelola dengan Docker.
+                <p class="text-sm text-cyan-100 mb-3">Technologies: Go, Go Fiber, PostgreSQL, Spotify API, Docker</p>
+                <p class="text-gray-200 mb-4 text-sm line-clamp-custom"> {/* Uses .line-clamp-custom (2 lines) */}
+                Backend API for managing music preferences, login, song search, and recommendations with Spotify integration. PostgreSQL managed with Docker.
                 </p>
                 <a href="https://github.com/glng-swndru/music-catalog" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline font-semibold">
-                Lihat di GitHub <i class="fab fa-github ml-1"></i>
+                View on GitHub <i class="fab fa-github ml-1"></i>
                 </a>
             </div>
             </div>
@@ -296,36 +282,33 @@
 
     <section id="education" class="relative py-24 md:py-32 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title text-cyan-300 drop-shadow-md">Pendidikan & Sertifikasi</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title text-cyan-300 drop-shadow-md">Education & Certifications</h2>
         <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-            <!-- Pendidikan -->
             <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-cyan-300 mb-2">Pendidikan Formal</h3>
+                <h3 class="text-xl font-semibold text-cyan-300 mb-2">Formal Education</h3>
                 <p class="text-lg text-white font-semibold">Institut Teknologi Sapta Mandiri</p>
-                <p class="text-sm text-gray-300 mb-1">Sarjana - Teknologi Informasi</p>
-                <p class="text-sm text-gray-400 mb-2">Tahun Lulus: 2024</p>
-                <p class="text-sm text-gray-200 italic">Skripsi: Penggunaan Alat Pelindung Diri pada Pekerja Berbasis Web Browser Menggunakan YOLOv8 dan TensorFlow.js</p>
+                <p class="text-sm text-gray-300 mb-1">Bachelor's Degree - Information Technology</p>
+                <p class="text-sm text-gray-400 mb-2">Graduated: 2024</p>
+                <p class="text-sm text-gray-200 italic">Thesis: Web-Based Personal Protective Equipment (PPE) Detection for Workers Using YOLOv8 and TensorFlow.js</p>
             </div>
-      
-            <!-- Sertifikasi -->
+        
             <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-cyan-300 mb-2">Sertifikasi</h3>
+                <h3 class="text-xl font-semibold text-cyan-300 mb-2">Certifications</h3>
                 <ul class="text-sm text-gray-200 space-y-2">
-                <li><span class="text-white font-semibold">AWS Certified Cloud Practitioner</span> – Feb 2025</li>
-                <li><span class="text-white font-semibold">Certified Network Security Practitioner (CNSP)</span> – Ags 2024</li>
+                <li><span class="text-white font-semibold">AWS Certified Cloud Practitioner</span> – Feb 2025 </li>
+                <li><span class="text-white font-semibold">Certified Network Security Practitioner (CNSP)</span> – Aug 2024 </li>
                 <li><span class="text-white font-semibold">Google Cloud Digital Leader</span> – Feb 2024</li>
                 <li><span class="text-white font-semibold">Alibaba Cloud Computing Associate</span> – Nov 2023</li>
                 <li><span class="text-white font-semibold">Google Associate Cloud Engineer</span> – Nov 2023</li>
                 </ul>
             </div>
-      
-            <!-- Pelatihan -->
+        
             <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg shadow-lg md:col-span-2">
-                <h3 class="text-xl font-semibold text-cyan-300 mb-2">Kursus & Pelatihan</h3>
+                <h3 class="text-xl font-semibold text-cyan-300 mb-2">Courses & Training</h3>
                 <ul class="text-sm text-gray-200 space-y-2">
-                <li><span class="text-white font-semibold">AWS re/Start Program Batch 9</span> – Orbit Future Academy (Juni – Sep 2024)</li>
+                <li><span class="text-white font-semibold">AWS re/Start Program Batch 9</span> – Orbit Future Academy (June – Sep 2024)</li>
                 <li><span class="text-white font-semibold">Google IT Support Specialization</span> – Coursera (Nov 2023)</li>
-                <li><span class="text-white font-semibold">Cloud Computing Cohort</span> – Bangkit Academy (Feb – Jul 2023)</li>
+                <li><span class="text-white font-semibold">Cloud Computing Cohort</span> – Bangkit Academy (Feb – July 2023)</li>
                 </ul>
             </div>
         </div>
@@ -334,43 +317,46 @@
 
     <section id="articles" class="relative py-24 md:py-32 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] text-white">
         <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold text-center mb-12 font-bold section-title text-cyan-300 drop-shadow-md">Artikel Saya</h2>
+        <h2 class="text-3xl font-bold text-center mb-12 section-title text-cyan-300 drop-shadow-md">My Articles</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
 
             <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg shadow-lg flex flex-col justify-between">
                 <div>
                     <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*dSSRT9mjJnj1vRMMWvUCLQ.png" alt="Terraform Basics" class="rounded-md mb-4 w-full h-40 object-cover border border-cyan-300">
                     <h3 class="text-xl font-semibold text-cyan-300 mb-2">Getting Started with Terraform: Basics, CLI, and Configuration Files</h3>
-                    <p class="text-sm text-gray-200 line-clamp-4"> Pelajari dasar-dasar Terraform, perintah CLI utama, dan struktur file konfigurasi untuk memulai perjalanan Anda dengan Infrastructure as Code.
+                    <p class="text-sm text-gray-200 line-clamp-4"> {/* Tailwind's line-clamp-4 utility */}
+                    Learn the basics of Terraform, key CLI commands, and the structure of configuration files to start your journey with Infrastructure as Code.
                     </p>
                 </div>
-                <a href="https://medium.com/@gilangswandaru27/getting-started-with-terraform-basics-cli-and-configuration-files-a4e7e7c33cd0" target="_blank" class="mt-4 text-cyan-400 hover:underline font-semibold">Baca di Medium</a>
+                <a href="https://medium.com/@gilangswandaru27/getting-started-with-terraform-basics-cli-and-configuration-files-a4e7e7c33cd0" target="_blank" rel="noopener noreferrer" class="mt-4 text-cyan-400 hover:underline font-semibold">Read on Medium</a>
             </div>
 
             <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg shadow-lg flex flex-col justify-between">
                 <div>
-                    <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*6SKxlu4EiAnHQnrTdQza6A.jpeg" alt="Intro IaC" class="rounded-md mb-4 w-full h-40 object-cover border border-cyan-300">
+                    <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*6SKxlu4EiAnHQnrTdQza6A.jpeg" alt="Introduction to IaC" class="rounded-md mb-4 w-full h-40 object-cover border border-cyan-300">
                     <h3 class="text-xl font-semibold text-cyan-300 mb-2">Introduction to Terraform and Infrastructure as Code (IaC)</h3>
-                    <p class="text-sm text-gray-200 line-clamp-4"> Pahami konsep Infrastructure as Code (IaC) dan bagaimana Terraform membantu mengelola infrastruktur cloud secara efisien dan konsisten.
+                    <p class="text-sm text-gray-200 line-clamp-4"> {/* Tailwind's line-clamp-4 utility */}
+                    Understand the concept of Infrastructure as Code (IaC) and how Terraform helps manage cloud infrastructure efficiently and consistently.
                     </p>
                 </div>
-                <a href="https://medium.com/@gilangswandaru27/introduction-to-terraform-and-infrastructure-as-code-iac-2283d50df63f" target="_blank" class="mt-4 text-cyan-400 hover:underline font-semibold">Baca di Medium</a>
+                <a href="https://medium.com/@gilangswandaru27/introduction-to-terraform-and-infrastructure-as-code-iac-2283d50df63f" target="_blank" rel="noopener noreferrer" class="mt-4 text-cyan-400 hover:underline font-semibold">Read on Medium</a>
             </div>
 
             <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg shadow-lg flex flex-col justify-between">
                 <div>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoPg_J6Mrj6wh1Ob73zsrBizjKe9-zXsUTWw&s" alt="Gambar Google Cloud Security Command Center" class="rounded-md mb-4 w-full h-40 object-cover border border-cyan-300">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoPg_J6Mrj6wh1Ob73zsrBizjKe9-zXsUTWw&s" alt="Google Cloud Security Command Center Diagram" class="rounded-md mb-4 w-full h-40 object-cover border border-cyan-300">
                     <h3 class="text-xl font-semibold text-cyan-300 mb-2">Using Google Cloud Security Command Center for Threat Hunting and Security Incident Investigation</h3>
-                    <p class="text-sm text-gray-200 line-clamp-4"> Google Cloud Security Command Center (SCC) adalah platform manajemen keamanan dan risiko yang canggih untuk pengguna Google Cloud. Artikel ini akan memandu Anda menggunakan SCC untuk perburuan ancaman (threat hunting) yang efektif dan investigasi insiden keamanan yang efisien.
+                    <p class="text-sm text-gray-200 line-clamp-4"> {/* Tailwind's line-clamp-4 utility */}
+                    Google Cloud Security Command Center (SCC) is an advanced security and risk management platform for Google Cloud users. This article guides you on using SCC for effective threat hunting and efficient security incident investigation.
                     </p>
                 </div>
-                <a href="https://medium.com/@gilangswandaru27/using-google-cloud-security-command-center-for-threat-hunting-and-security-incident-investigation-c1f91ec43f3c" target="_blank" class="mt-4 text-cyan-400 hover:underline font-semibold">Baca di Medium</a>
+                <a href="https://medium.com/@gilangswandaru27/using-google-cloud-security-command-center-for-threat-hunting-and-security-incident-investigation-c1f91ec43f3c" target="_blank" rel="noopener noreferrer" class="mt-4 text-cyan-400 hover:underline font-semibold">Read on Medium</a>
             </div>
 
         </div>
         <div class="text-center mt-12">
             <a href="https://medium.com/@gilangswandaru27" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300">
-            Lihat Semua Artikel di Medium <i class="fab fa-medium ml-2"></i>
+            View All Articles on Medium <i class="fab fa-medium ml-2"></i>
             </a>
         </div>
         </div>
@@ -378,24 +364,24 @@
 
     <section id="contact" class="relative py-24 md:py-32 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] text-white">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title text-cyan-300 drop-shadow-md">Hubungi Saya</h2>
-          
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title text-cyan-300 drop-shadow-md">Contact Me</h2>
+        
         <div class="max-w-xl mx-auto text-center">
             <p class="text-lg text-cyan-400 mb-8">
-            Saya sangat antusias untuk membahas peluang, proyek, atau sekadar bertukar pikiran mengenai teknologi cloud dan DevOps. Jangan ragu untuk menghubungi saya!
+            I'm always excited to discuss opportunities, projects, or simply exchange ideas about cloud and DevOps technologies. Feel free to reach out!
             </p>
-      
+        
             <a href="mailto:gilangswandaru27@gmail.com" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 mb-6">
-            Kirim Email <i class="fas fa-paper-plane ml-2"></i>
+            Send Email <i class="fas fa-paper-plane ml-2"></i>
             </a>
-      
+        
         <div class="flex justify-center space-x-6 mt-6">
-            <a href="https://linkedin.com/in/gilang-swandaru" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi profil LinkedIn saya" class="text-blue-500 hover:text-blue-300 transition duration-300">
+            <a href="https://linkedin.com/in/gilang-swandaru" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile" class="text-blue-500 hover:text-blue-300 transition duration-300">
                 <i class="fab fa-linkedin text-3xl md:text-4xl"></i>
                 <span class="block text-sm mt-1">LinkedIn</span>
             </a>
-      
-            <a href="https://github.com/glng-swndru" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi profil GitHub saya" class="text-gray-400 hover:text-white transition duration-300">
+        
+            <a href="https://github.com/glng-swndru" target="_blank" rel="noopener noreferrer" aria-label="Visit my GitHub profile" class="text-gray-400 hover:text-white transition duration-300">
                 <i class="fab fa-github text-3xl md:text-4xl"></i>
                 <span class="block text-sm mt-1">GitHub</span>
             </a>
@@ -403,22 +389,19 @@
         </div>
         </div>
     </section>
-      
-
-    <footer class="bg-gray-900 text-cyan-200 py-8 text-center border-t border-cyan-500 font-serif shadow-inner">
-        <div class="container mx-auto px-6">
-            <p class="text-lg italic tracking-wide">
-                &copy; <span id="currentYear"></span> Gilang Swandaru. 
-                <span class="text-cyan-400 font-bold">Shangri-La Frontier</span>-inspired.
-            </p>
-            <p class="mt-2 text-sm text-cyan-300">
-                "Dalam dunia bug dan monster, hanya yang gigih bisa naik level."
-            </p>
-        </div>
-    </footer>
+        
+    <footer class="bg-gray-900 text-cyan-200 py-8 text-center border-t border-cyan-500 font-sans shadow-inner">
+    <div class="container mx-auto px-6">
+        <p class="text-sm">
+            &copy; <span id="currentYear"></span> Gilang Swandaru. All rights reserved.
+        </p>
+        <p class="mt-2 text-xs text-cyan-300">
+            Cloud & DevOps Enthusiast </p>
+    </div>
+</footer>
 
     <script>
-        // Script untuk toggle menu mobile
+        // Script for mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -426,7 +409,7 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Script untuk menutup menu mobile saat link di klik (opsional)
+        // Script to close mobile menu when a link is clicked (optional but good UX)
         const mobileMenuLinks = mobileMenu.querySelectorAll('a');
         mobileMenuLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -434,19 +417,10 @@
             });
         });
 
-        // Script untuk menampilkan tahun saat ini di footer
+        // Script to display current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // Script untuk mewarnai SVG dari Simple Icons (jika SVG mendukung 'currentColor')
-        // Beberapa SVG mungkin tidak bisa diwarnai ulang dengan cara ini.
-        // Anda mungkin perlu mengunduh SVG dan memodifikasinya atau menggunakan filter CSS.
-        document.querySelectorAll('.skill-logo').forEach(img => {
-            const color = img.style.fill; // Ambil warna dari style inline jika ada
-            if (color && img.src.endsWith('.svg')) {
-                // Coba fetch dan modifikasi SVG, ini lebih kompleks dan mungkin terhalang CORS
-                // Pendekatan yang lebih sederhana adalah menggunakan filter CSS atau memastikan SVG sumber menggunakan currentColor
-            }
-        });
+        // (The SVG coloring script from original was commented out as it's complex and often not needed if SVGs are designed well or use currentColor)
     </script>
 
 </body>
